@@ -14,12 +14,12 @@ class App extends Component {
             gameNote: "Click an image to begin!",
             highScore: 0,
             score: 0
-          };
+          }
 
-  setClick = id {
+  setClick = id => {
     let currentIndex = this.state.Memory.findIndex(function(Memory){
       return (id === Memory.id)
-    });
+    })
 
     if (this.state.Memory[currentIndex].guessed === "no") {
       let newImageArray = Memory.slice(0);
@@ -43,7 +43,7 @@ class App extends Component {
     }
 
       this.setState({
-        Memory.Memory.sort(function(a, b){return 0.5 - Math.random()})
+        Memory:Memory.sort(function(a, b){return 0.5 - Math.random()})
       });
   } else {
     if (this.state.score > this.state.highScore) {
